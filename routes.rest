@@ -1,0 +1,169 @@
+// LOCALHOST
+// Users
+### Get all users in DB
+GET http://localhost:8080/users
+
+### Get specific user by id
+GET http://localhost:8080/users/63ddeb39e5ff079014d2bca6
+
+### Create new user
+POST http://localhost:8080/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Launchpad",
+    "lastName": "McQuack",
+    "email": "ace.pilot@flightschool.edu",
+    "birthYear": "1980",
+    "image": ""
+}
+
+### Update a specific user by id
+PUT http://localhost:8080/users/63ddeb39e5ff079014d2bca8 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Mickey",
+    "lastName": "Mouse",
+    "email": "big.ears@disney.com",
+    "birthYear": "1962",
+    "image": ""
+}
+
+### Delete specific user by id
+DELETE http://localhost:8080/users/63ddeb39e5ff079014d2bca8
+
+// Movies
+### Get all movies in DB
+GET http://localhost:8080/movies
+
+### Get specific movie by id
+GET http://localhost:8080/movies/63ddf99ae5ff079014e6d1a7
+
+### Create new movie
+POST http://localhost:8080/movies/ HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Top Gun: Maverick",
+    "releaseYear": "2022",
+    "mpaaRating": "PG-13",
+    "language": "English",
+    "runtime": "2h 59m",
+    "genre": [
+        "Action",
+        "Drama"
+    ],
+    "overview": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
+    "imdbCode": "",
+    "tmdbCode": "361743",
+    "image": "https://www.themoviedb.org/t/p/original/jeGvNOVMs5QIU1VaoGvnd3gSv0G.jpg"
+}
+
+### Update a specific movie by id
+PUT http://localhost:8080/movies/63ddeb39e5ff079014d2bca8 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Top Gun: Maverick",
+    "releaseYear": "2022",
+    "mpaaRating": "PG-13",
+    "language": "English",
+    "runtime": "2h 11m",
+    "genre": [
+        "Action",
+        "Drama"
+    ],
+    "overview": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
+    "imdbCode": "tt1745960",
+    "tmdbCode": "361743",
+    "image": "https://www.themoviedb.org/t/p/original/hGRaTFk8FaPcRbpsq0NKlKccQcs.jpg"
+}
+
+### Delete specific movie by id
+DELETE http://localhost:8080/movies/63ddeb39e5ff079014d2bca8
+
+
+// PRODUCTION
+### Get all users in DB
+GET https://digital-library-28n2.onrender.com/users
+
+### Get specific user by id
+GET https://digital-library-28n2.onrender.com/users/63ddeb39e5ff079014d2bca6
+
+### Create new user
+POST https://digital-library-28n2.onrender.com/users/ HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Launchpad",
+    "lastName": "McQuack",
+    "email": "ace.pilot@flightschool.edu",
+    "birthYear": "1980",
+    "image": ""
+}
+
+### Update a specific user by id
+PUT https://digital-library-28n2.onrender.com/users/63ddeb39e5ff079014d2bca8 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Mickey",
+    "lastName": "Mouse",
+    "email": "big.ears@disney.com",
+    "birthYear": "1962",
+    "image": ""
+}
+
+### Delete specific user by id
+DELETE https://digital-library-28n2.onrender.com/users/63ddeb39e5ff079014d2bca8
+
+// Movies
+### Get all movies in DB
+GET https://digital-library-28n2.onrender.com/movies
+
+### Get specific movie by id
+GET https://digital-library-28n2.onrender.com/movies/63ddf99ae5ff079014e6d1a7
+
+### Create new movie
+POST https://digital-library-28n2.onrender.com/movies/ HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Top Gun: Maverick",
+    "releaseYear": "2022",
+    "mpaaRating": "PG-13",
+    "language": "English",
+    "runtime": "2h 59m",
+    "genre": [
+        "Action",
+        "Drama"
+    ],
+    "overview": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
+    "imdbCode": "",
+    "tmdbCode": "361743",
+    "image": "https://www.themoviedb.org/t/p/original/jeGvNOVMs5QIU1VaoGvnd3gSv0G.jpg"
+}
+
+### Update a specific movie by id
+PUT https://digital-library-28n2.onrender.com/movies/63ddeb39e5ff079014d2bca8 HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Top Gun: Maverick",
+    "releaseYear": "2022",
+    "mpaaRating": "PG-13",
+    "language": "English",
+    "runtime": "2h 11m",
+    "genre": [
+        "Action",
+        "Drama"
+    ],
+    "overview": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
+    "imdbCode": "tt1745960",
+    "tmdbCode": "361743",
+    "image": "https://www.themoviedb.org/t/p/original/hGRaTFk8FaPcRbpsq0NKlKccQcs.jpg"
+}
+
+### Delete specific movie by id
+DELETE https://digital-library-28n2.onrender.com/movies/63ddeb39e5ff079014d2bca8
