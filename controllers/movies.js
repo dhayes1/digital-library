@@ -58,7 +58,7 @@ const createMovie = async (req, res) => {
         .getDb()
         .db()
         .collection('Movies')
-        .insertOne(user);
+        .insertOne(movie);
     if (response.acknowledged) {
         res.status(201).json(response);
     } else {
