@@ -9,30 +9,39 @@ const getAll = async (req, res, next) => {
         .getDb()
         .db()
         .collection('Movies')
-        .find();
-    result.toArray().then((lists) => {
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(lists);
-    });
+        .find()
+        .toArray((err, lists) => {
+          if (err) {
+            res.status(400).json({ message: err });
+          }
+          res.setHeader('Content-Type', 'application/json');
+          res.status(200).json(lists);
+        });
   } catch (err) {
         res.status(500).json({ message: err.message });
   }
 };
 
-const getSingle = async (req, res, next) => {
+const getMovie = async (req, res, next) => {
   // #swagger.tags = ['movies']
   // #swagger.summary = 'Finds a single movie by ID'
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('Must be a valid movie id to find a movie.');
+    }
     const movieId = new ObjectId(req.params.id);
     const result = await mongodb
         .getDb()
         .db()
         .collection('Movies')
-        .find({ _id: movieId });
-    result.toArray().then((lists) => {
-        res.setHeader('Content-Type', 'application/json');
-        res.status(200).json(lists[0]);
-    });
+        .find({ _id: movieId })
+        .toArray((err, lists) => {
+          if (err) {
+            res.status(400).json({ message: err });
+          }
+          res.setHeader('Content-Type', 'application/json');
+          res.status(200).json(lists);
+        });
   } catch (err) {
         res.status(500).json({ message: err.message });
   }
@@ -121,4 +130,4 @@ const deleteMovie = async (req, res, next) => {
   }
 };
 
-module.exports = { getAll, getSingle, createMovie, updateMovie, deleteMovie };
+module.exports = { getAll, getMovie, createMovie, updateMovie, deleteMovie };

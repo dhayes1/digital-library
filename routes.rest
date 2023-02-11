@@ -11,7 +11,7 @@ POST http://localhost:8080/users/ HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Launchpad",
+    "firstName": "LaunchPad",
     "lastName": "McQuack",
     "email": "ace.pilot@flightschool.edu",
     "birthYear": "1980",
@@ -46,7 +46,7 @@ content-type: application/json
 
 {
     "title": "Top Gun: Maverick",
-    "releaseYear": "2022",
+    "releaseYear": 2022,
     "mpaaRating": "PG-13",
     "language": "English",
     "runtime": "2h 59m",
@@ -55,7 +55,7 @@ content-type: application/json
         "Drama"
     ],
     "overview": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
-    "imdbCode": "",
+    "imdbCode": 1325,
     "tmdbCode": "361743",
     "image": "https://www.themoviedb.org/t/p/original/jeGvNOVMs5QIU1VaoGvnd3gSv0G.jpg"
 }
@@ -96,7 +96,7 @@ POST https://digital-library-28n2.onrender.com/users/ HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Launchpad",
+    "firstName": "",
     "lastName": "McQuack",
     "email": "ace.pilot@flightschool.edu",
     "birthYear": "1980",
@@ -104,7 +104,7 @@ content-type: application/json
 }
 
 ### Update a specific user by id
-PUT https://digital-library-28n2.onrender.com/users/63df425a746b42f20b6fe253 HTTP/1.1
+PUT https://digital-library-28n2.onrender.com/users/63df458d704dcbbb68f46f73 HTTP/1.1
 content-type: application/json
 
 {

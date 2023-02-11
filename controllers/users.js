@@ -1,4 +1,5 @@
 const mongodb = require('../db/connection');
+
 const ObjectId = require('mongodb').ObjectId;
 
 const getAll = async (req, res, next) => {
@@ -9,30 +10,39 @@ const getAll = async (req, res, next) => {
       .getDb()
       .db()
       .collection('Users')
-      .find();
-    result.toArray().then((lists) => {
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists);
-    });
+      .find()
+      .toArray((err, lists) => {
+        if (err) {
+          res.status(400).json({ message: err });
+        }
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(lists);
+      });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
-const getSingle = async (req, res, next) => {
+const getUser = async (req, res, next) => {
   // #swagger.tags = ['users']
   // #swagger.summary = 'Finds a single user by ID'
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('Must use a valid contact id to find a contact.');
+    }
     const userId = new ObjectId(req.params.id);
     const result = await mongodb
       .getDb()
       .db()
       .collection('Users')
-      .find({ _id: userId });
-    result.toArray().then((lists) => {
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(lists[0]);
-    });
+      .find({ _id: userId })
+      .toArray((err, lists) => {
+        if (err) {
+          res.status(400).json({ message: err });
+        }
+        res.setHeader('Content-Type', 'application/json');
+        res.status(200).json(lists);
+      });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -134,4 +144,4 @@ const deleteUser = async (req, res, next) => {
   }
 };
 
-module.exports = { getAll, getSingle, createUser, updateUser, deleteUser };
+module.exports = { getAll, getUser, createUser, updateUser, deleteUser };
