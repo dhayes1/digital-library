@@ -4,7 +4,7 @@
 GET http://localhost:8080/users
 
 ### Get specific user by id
-GET http://localhost:8080/users/63ddeb39e5ff079014d2bca6
+GET http://localhost:8080/users/63e882898c0a3532fb3c9720
 
 ### Create new user
 POST http://localhost:8080/users/ HTTP/1.1
@@ -86,13 +86,13 @@ DELETE http://localhost:8080/movies/63ddeb39e5ff079014d2bca8
 
 // PRODUCTION
 ### Get all users in DB
-GET https://digital-library-28n2.onrender.com/users
+GET https://digital-library-ohio.onrender.com/users
 
 ### Get specific user by id
-GET https://digital-library-28n2.onrender.com/users/63ddeb39e5ff079014d2bca6
+GET https://digital-library-ohio.onrender.com/users/63ddeb39e5ff079014d2bca6
 
 ### Create new user
-POST https://digital-library-28n2.onrender.com/users/ HTTP/1.1
+POST https://digital-library-ohio.onrender.com/users/ HTTP/1.1
 content-type: application/json
 
 {
@@ -104,7 +104,7 @@ content-type: application/json
 }
 
 ### Update a specific user by id
-PUT https://digital-library-28n2.onrender.com/users/63df458d704dcbbb68f46f73 HTTP/1.1
+PUT https://digital-library-ohio.onrender.com/users/63df458d704dcbbb68f46f73 HTTP/1.1
 content-type: application/json
 
 {
@@ -116,17 +116,17 @@ content-type: application/json
 }
 
 ### Delete specific user by id
-DELETE https://digital-library-28n2.onrender.com/users/63ddeb39e5ff079014d2bca8
+DELETE https://digital-library-ohio.onrender.com/users/63ddeb39e5ff079014d2bca8
 
 // Movies
 ### Get all movies in DB
-GET https://digital-library-28n2.onrender.com/movies
+GET https://digital-library-ohio.onrender.com/movies
 
 ### Get specific movie by id
-GET https://digital-library-28n2.onrender.com/movies/63ddf99ae5ff079014e6d1a7
+GET https://digital-library-ohio.onrender.com/movies/63ddf99ae5ff079014e6d1a7
 
 ### Create new movie
-POST https://digital-library-28n2.onrender.com/movies/ HTTP/1.1
+POST https://digital-library-ohio.onrender.com/movies/ HTTP/1.1
 content-type: application/json
 
 {
@@ -146,7 +146,7 @@ content-type: application/json
 }
 
 ### Update a specific movie by id
-PUT https://digital-library-28n2.onrender.com/movies/63ddeb39e5ff079014d2bca8 HTTP/1.1
+PUT https://digital-library-ohio.onrender.com/movies/63ddeb39e5ff079014d2bca8 HTTP/1.1
 content-type: application/json
 
 {
@@ -166,4 +166,4 @@ content-type: application/json
 }
 
 ### Delete specific movie by id
-DELETE https://digital-library-28n2.onrender.com/movies/63ddeb39e5ff079014d2bca8
+DELETE https://digital-library-ohio.onrender.com/movies/63ddeb39e5ff079014d2bca8
