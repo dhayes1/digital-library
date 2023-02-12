@@ -10,10 +10,7 @@ const getAll = async (req, res, next) => {
         .db()
         .collection('Movies')
         .find()
-        .toArray((err, lists) => {
-          if (err) {
-            res.status(400).json({ message: err });
-          }
+        result.toArray().then((lists) => {
           res.setHeader('Content-Type', 'application/json');
           res.status(200).json(lists);
         });
@@ -21,6 +18,27 @@ const getAll = async (req, res, next) => {
         res.status(500).json({ message: err.message });
   }
 };
+
+// const getAll = async (req, res, next) => {
+//   // #swagger.tags = ['movies']
+//   // #swagger.summary = 'Finds all movies'
+//   try {
+//     const result = await mongodb
+//         .getDb()
+//         .db()
+//         .collection('Movies')
+//         .find()
+//         .toArray((err, lists) => {
+//           if (err) {
+//             res.status(400).json({ message: err });
+//           }
+//           res.setHeader('Content-Type', 'application/json');
+//           res.status(200).json(lists);
+//         });
+//   } catch (err) {
+//         res.status(500).json({ message: err.message });
+//   }
+// };
 
 const getMovie = async (req, res, next) => {
   // #swagger.tags = ['movies']
@@ -35,10 +53,7 @@ const getMovie = async (req, res, next) => {
         .db()
         .collection('Movies')
         .find({ _id: movieId })
-        .toArray((err, lists) => {
-          if (err) {
-            res.status(400).json({ message: err });
-          }
+        result.toArray().then((lists) => {
           res.setHeader('Content-Type', 'application/json');
           res.status(200).json(lists);
         });
@@ -46,6 +61,31 @@ const getMovie = async (req, res, next) => {
         res.status(500).json({ message: err.message });
   }
 };
+
+// const getMovie = async (req, res, next) => {
+//   // #swagger.tags = ['movies']
+//   // #swagger.summary = 'Finds a single movie by ID'
+//   try {
+//     if (!ObjectId.isValid(req.params.id)) {
+//       res.status(400).json('Must be a valid movie id to find a movie.');
+//     }
+//     const movieId = new ObjectId(req.params.id);
+//     const result = await mongodb
+//         .getDb()
+//         .db()
+//         .collection('Movies')
+//         .find({ _id: movieId })
+//         .toArray((err, lists) => {
+//           if (err) {
+//             res.status(400).json({ message: err });
+//           }
+//           res.setHeader('Content-Type', 'application/json');
+//           res.status(200).json(lists);
+//         });
+//   } catch (err) {
+//         res.status(500).json({ message: err.message });
+//   }
+// };
 
 const createMovie = async (req, res) => {
   // #swagger.tags = ['movies']
