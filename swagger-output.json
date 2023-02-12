@@ -5,7 +5,7 @@
     "description": "API for interacting with the digital library database.",
     "version": "1.0.0"
   },
-  "host": "digital-library-28n2.onrender.com",
+  "host": "digital-library-ohio.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"

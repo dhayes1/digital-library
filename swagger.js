@@ -5,7 +5,7 @@ const doc = {
     title: 'CSE 341 Digital Library API',
     description: 'API for interacting with the digital library database.',
   },
-  host: 'digital-library-28n2.onrender.com',
+  host: 'digital-library-ohio.onrender.com',
   schemes: ['https'],
 };
 
