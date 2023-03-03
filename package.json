@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "swagger": "node ./swagger.js",
-    "devStart": "nodemon ./index.js"
+    "start": "cross-env NODE_ENV=production node app",
+    "dev": "cross-env NODE_ENV=development nodemon app",
+    "swagger": "node ./swagger.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dhayes1/digital-library.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,18 +20,25 @@
   },
   "homepage": "https://github.com/dhayes1/digital-library#readme",
   "dependencies": {
-    "body-parser": "^1.20.1",
+    "body-parser": "^1.20.2",
+    "connect-mongo": "^4.6.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "express-validator": "^6.14.3",
-    "mongodb": "^5.0.0",
-    "mongoose": "^6.9.0"
+    "express-handlebars": "^6.0.7",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.15.0",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.4",
+    "mongoose": "^6.10.0",
+    "morgan": "^1.10.0",
+    "passport": "^0.6.0",
+    "passport-google-oauth20": "^2.0.0"
   },
   "devDependencies": {
-    "dotenv": "^16.0.3",
+    "cross-env": "^7.0.3",
     "nodemon": "^2.0.20",
-    "prettier": "^2.8.3",
-    "swagger-autogen": "^2.23.0",
-    "swagger-ui-express": "^4.6.0"
+    "swagger-autogen": "^2.23.1",
+    "swagger-ui-express": "^4.6.2"
   }
 }

@@ -4,7 +4,7 @@
 GET http://localhost:8080/users
 
 ### Get specific user by id
-GET http://localhost:8080/users/63e882898c0a3532fb3c9720
+GET http://localhost:8080/users/63fc50da45166b0042d4034f
 
 ### Create new user
 POST http://localhost:8080/users/ HTTP/1.1
@@ -38,7 +38,10 @@ DELETE http://localhost:8080/users/63ddeb39e5ff079014d2bca8
 GET http://localhost:8080/movies
 
 ### Get specific movie by id
-GET http://localhost:8080/movies/63ddf99ae5ff079014e6d1a7
+GET http://localhost:8080/movies/63feeede6621012a3a942f4f
+
+### Get specific movie by id
+GET http://localhost:8080/movies/title?title=Top Gun: Maverick
 
 ### Create new movie
 POST http://localhost:8080/movies/ HTTP/1.1
@@ -46,7 +49,7 @@ content-type: application/json
 
 {
     "title": "Top Gun: Maverick",
-    "releaseYear": 2022,
+    "yearReleased": "2022",
     "mpaaRating": "PG-13",
     "language": "English",
     "runtime": "2h 59m",
@@ -55,18 +58,16 @@ content-type: application/json
         "Drama"
     ],
     "overview": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
-    "imdbCode": 1325,
-    "tmdbCode": "361743",
-    "image": "https://www.themoviedb.org/t/p/original/jeGvNOVMs5QIU1VaoGvnd3gSv0G.jpg"
+    "tmdbCode": "361743"
 }
 
 ### Update a specific movie by id
-PUT http://localhost:8080/movies/63ddeb39e5ff079014d2bca8 HTTP/1.1
+PUT http://localhost:8080/movies/63fef234a32338df0711c216 HTTP/1.1
 content-type: application/json
 
 {
     "title": "Top Gun: Maverick",
-    "releaseYear": "2022",
+    "yearReleased": "2028",
     "mpaaRating": "PG-13",
     "language": "English",
     "runtime": "2h 11m",
@@ -75,13 +76,11 @@ content-type: application/json
         "Drama"
     ],
     "overview": "After more than thirty years of service as one of the Navy’s top aviators, and dodging the advancement in rank that would ground him, Pete “Maverick” Mitchell finds himself training a detachment of TOP GUN graduates for a specialized mission the likes of which no living pilot has ever seen.",
-    "imdbCode": "tt1745960",
-    "tmdbCode": "361743",
-    "image": "https://www.themoviedb.org/t/p/original/hGRaTFk8FaPcRbpsq0NKlKccQcs.jpg"
+    "tmdbCode": "361743"
 }
 
 ### Delete specific movie by id
-DELETE http://localhost:8080/movies/63ddeb39e5ff079014d2bca8
+DELETE http://localhost:8080/movies/63feeede6621012a3a942f4f
 
 
 // PRODUCTION
